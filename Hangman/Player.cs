@@ -18,6 +18,7 @@ namespace Hangman
         // constructor
         public Player()
         {
+            currentScore = 0;
 
         }
 

@@ -11,11 +11,13 @@ namespace Hangman
         // member variables
         Player playerOne;
         Player playerTwo;
+        string [] ScoreToPart;
 
         // constructor
         public Game()
         {
-
+            
+            ScoreToPart = new string [] {"nothing", "head", "left arm", "right arm", "left leg", "right leg" };
         }
 
         // member methods
