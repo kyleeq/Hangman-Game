@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    class Player
+    public class Player
     {
         // member variables
-        int score;
+        public int currentScore;
+        public int maxScore;
+        public string name;
+        List<string> word;
+
 
         // constructor
+        public Player()
+        {
+
+        }
 
         // member methods
 

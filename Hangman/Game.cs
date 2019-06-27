@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    class Game
+    public class Game
     {
+        // member variables
+        Player playerOne;
+        Player playerTwo;
+
+        // constructor
+        public Game()
+        {
+
+        }
+
+        // member methods
     }
 }
