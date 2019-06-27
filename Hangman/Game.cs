@@ -12,6 +12,8 @@ namespace Hangman
         Player playerOne; // supplies the word 
         Player playerTwo; // guesses the letters in playerOne's word
         public string [] BodyParts;
+        public string word;
+        public string[] wordArray;
         public string guessedWord;
 
 
@@ -29,6 +31,8 @@ namespace Hangman
             WelcomeDescriptionPrompt();
             Console.ReadLine();
             CreatePlayers();
+            Console.ReadLine();
+            WordPrompt();
         }
         public void WelcomeDescriptionPrompt()
         {
@@ -48,6 +52,12 @@ namespace Hangman
             Console.WriteLine("Player two, please enter your name and then press enter when you're finished.");
             playerTwo = new Player();
             playerTwo.name = Console.ReadLine();
+        }
+        public void WordPrompt()
+        {
+            Console.WriteLine(playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
+            word = Console.ReadLine();
+            wordArray = word.Split();
         }
     }
 }
