@@ -17,6 +17,8 @@ namespace Hangman
         // constructor
         public Player()
         {
+            Console.WriteLine("Please enter your name and then press enter.");
+            name = Console.ReadLine();
             currentScore = 0;
         }
 
