@@ -18,14 +18,16 @@ namespace Hangman
         // constructor
         public Game()
         {
-            
             BodyParts = new string [] {"nothing", "head", "body", "left arm", "right arm", "left leg", "right leg" };
+            playerOne = new Player();
+            playerTwo = new Player();
         }
 
         // member methods
         public void KickOff()
         {
             WelcomeDescriptionPrompt();
+            Console.ReadLine();
             CreatePlayers();
         }
         public void WelcomeDescriptionPrompt()
@@ -41,8 +43,10 @@ namespace Hangman
         public void CreatePlayers()
         {
             Console.WriteLine("Player one, please enter your name and then press enter when you're finished.");
+            playerOne = new Player();
             playerOne.name = Console.ReadLine();
             Console.WriteLine("Player two, please enter your name and then press enter when you're finished.");
+            playerTwo = new Player();
             playerTwo.name = Console.ReadLine();
         }
     }

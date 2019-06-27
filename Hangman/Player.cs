@@ -19,7 +19,6 @@ namespace Hangman
         public Player()
         {
             currentScore = 0;
-
         }
 
         // member methods
