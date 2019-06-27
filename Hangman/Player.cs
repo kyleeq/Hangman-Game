@@ -12,7 +12,6 @@ namespace Hangman
         public int currentScore;
         public int maxScore;
         public string name;
-        List<string> word;
 
 
         // constructor

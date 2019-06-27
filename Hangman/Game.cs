@@ -13,7 +13,7 @@ namespace Hangman
         Player playerTwo; // guesses the letters in playerOne's word
         public string [] BodyParts;
         public string word;
-        public string[] wordArray;
+        public string [] wordArray; 
         public string guessedWord;
 
 
@@ -53,11 +53,16 @@ namespace Hangman
             playerTwo = new Player();
             playerTwo.name = Console.ReadLine();
         }
-        public void WordPrompt()
+        public string WordPrompt()
         {
             Console.WriteLine(playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
             word = Console.ReadLine();
-            wordArray = word.Split();
+            return word;
+        }
+        public void GuessALetter()
+        {
+            Console.WriteLine(playerTwo + " guess a letter");
+            string letter = Console.ReadLine().ToLower();
         }
     }
 }
