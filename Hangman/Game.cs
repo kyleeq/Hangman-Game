@@ -31,9 +31,11 @@ namespace Hangman
             WelcomeDescriptionPrompt();
             Console.ReadLine();
             CreatePlayers();
-            Console.ReadLine();
             WordPrompt();
-            GuessALetter();
+            for (int i = 0; i < 6; i++)
+            {
+                LetterDeterminator(GuessALetter(), word);
+            }
         }
         public void WelcomeDescriptionPrompt()
         {
@@ -70,10 +72,19 @@ namespace Hangman
             }
             return letter;
         }
-        public void LetterDeterminator(string letter)
+        public void LetterDeterminator(string letter, string word)
         {
-            
-
+            if (word.Contains(letter))
+            {
+                foreach (string item in alphabet)
+                {
+                    if (item == letter)
+                    {
+                        letter = null;
+                    }
+                }
+                Console.WriteLine("Heyooo! " + letter + " is in " + playerOne + "'s word!");
+            }
         }
     }
 }
