@@ -35,6 +35,7 @@ namespace Hangman
             Console.ReadLine();
             CreatePlayers();
             WordPrompt();
+            Console.Clear();
             CreateWordArray(word);
             for (int i = 0; i < 6; i++)
             {
@@ -61,7 +62,7 @@ namespace Hangman
         }
         public string WordPrompt()
         {
-            Console.WriteLine(playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
+            Console.WriteLine(playerTwo + "Don't look! " + playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
             word = Console.ReadLine();
             
             return word;

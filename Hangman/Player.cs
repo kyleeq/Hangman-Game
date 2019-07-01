@@ -20,6 +20,7 @@ namespace Hangman
             Console.WriteLine("Please enter your name and then press enter.");
             name = Console.ReadLine();
             currentScore = 0;
+            maxScore = 6;
         }
 
         // member methods
