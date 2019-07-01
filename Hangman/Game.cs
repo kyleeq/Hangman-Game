@@ -62,7 +62,7 @@ namespace Hangman
         {
             Console.WriteLine(playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
             word = Console.ReadLine();
-            playerTwo.maxScore = word.Count();
+            wordArray = new string [word.Count()];
             return word;
         }
         public string GuessALetter()
@@ -81,19 +81,23 @@ namespace Hangman
             {
                 foreach (string item in alphabet)
                 {
+
                     if (item == letter)
                     {
                         letter = null;
                     }
                 }
                 Console.WriteLine("Heyooo! " + letter + " is in " + playerOne + "'s word!");
-                return alphabet;
             }
             else
             {
                 BodyPartNum++;
                 Console.WriteLine("Big oof. " + playerOne + "'s word does not contain that letter. Hangman now has a " + BodyParts[BodyPartNum]);
             }
+        }
+        public void FinalMenu()
+        {
+
         }
     }
 }
