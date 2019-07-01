@@ -95,9 +95,23 @@ namespace Hangman
                 Console.WriteLine("Big oof. " + playerOne + "'s word does not contain that letter. Hangman now has a " + BodyParts[BodyPartNum]);
             }
         }
-        public void FinalMenu()
+        public void CompareWords()
         {
 
+        }
+        public void FinalMenu()
+        {
+            Console.WriteLine("Would you like to play again? Please type 'restart' to play again and 'quit' to exit the game");
+            string UserInput = Console.ReadLine().ToLower();
+
+            switch (UserInput)
+            {
+                case "restart":
+                    KickOff();
+                    break;
+                case "quit":
+                    break;
+            }
         }
     }
 }
