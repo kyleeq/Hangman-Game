@@ -11,7 +11,9 @@ namespace Hangman
         // member variables
         Player playerOne; // supplies the word 
         Player playerTwo; // guesses the letters in playerOne's word
+
         public string[] BodyParts;
+        public int BodyPartNum;
         public string word;
         public string[] wordArray; 
         public string guessedWord;
@@ -23,6 +25,7 @@ namespace Hangman
         {
             BodyParts = new string[] {"nothing", "head", "body", "left arm", "right arm", "left leg", "right leg" };
             alphabet = new string[] {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+            BodyPartNum = 0;
         }
 
         // member methods
@@ -84,6 +87,12 @@ namespace Hangman
                     }
                 }
                 Console.WriteLine("Heyooo! " + letter + " is in " + playerOne + "'s word!");
+                return alphabet;
+            }
+            else
+            {
+                BodyPartNum++;
+                Console.WriteLine("Big oof. " + playerOne + "'s word does not contain that letter. Hangman now has a " + BodyParts[BodyPartNum]);
             }
         }
     }
