@@ -35,6 +35,7 @@ namespace Hangman
             Console.ReadLine();
             CreatePlayers();
             WordPrompt();
+            CreateWordArray(word);
             for (int i = 0; i < 6; i++)
             {
                 LetterDeterminator(GuessALetter(), word);
@@ -62,8 +63,19 @@ namespace Hangman
         {
             Console.WriteLine(playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
             word = Console.ReadLine();
-            wordArray = new string [word.Count()];
+            
             return word;
+        }
+        public void CreateWordArray(string word)
+        {
+            wordArray = new string[word.Count()];
+            for (int i = 0; i < wordArray.Count(); i++)
+            {
+                if (wordArray[i] == null)
+                {
+                    wordArray[i] = "_";
+                }
+            }
         }
         public string GuessALetter()
         {
@@ -97,7 +109,7 @@ namespace Hangman
         }
         public void CompareWords()
         {
-
+            Console.WriteLine(wordArray);
         }
         public void FinalMenu()
         {
