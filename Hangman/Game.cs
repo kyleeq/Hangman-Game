@@ -41,6 +41,7 @@ namespace Hangman
             {
                 LetterDeterminator(GuessALetter(), word);
             }
+            CompareWords();
         }
         public void WelcomeDescriptionPrompt()
         {
@@ -92,6 +93,8 @@ namespace Hangman
         {
             if (word.Contains(letter))
             {
+                Console.WriteLine("Heyooo! " + letter + " is in " + playerOne.name + "'s word!");
+                
                 foreach (string item in alphabet)
                 {
 
@@ -100,7 +103,7 @@ namespace Hangman
                         letter = null;
                     }
                 }
-                Console.WriteLine("Heyooo! " + letter + " is in " + playerOne.name + "'s word!");
+                
             }
             else
             {
@@ -110,7 +113,16 @@ namespace Hangman
         }
         public void CompareWords()
         {
-            Console.WriteLine(wordArray);
+            Console.WriteLine("Alrighty " + playerTwo.name + ", guess " + playerOne.name + "'s Hangman word!");
+            guessedWord = Console.ReadLine().ToLower();
+            if (word == guessedWord)
+            {
+                Console.WriteLine("You correctly guessed the word! Congrats " + playerTwo.name + ", you won!");
+            }
+            else
+            {
+                Console.WriteLine("OOF! " + playerOne.name + "'s Hangman word was '" + word + "'. " + playerOne.name + " won this round");
+            }
         }
         public void FinalMenu()
         {
