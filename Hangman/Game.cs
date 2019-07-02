@@ -42,6 +42,7 @@ namespace Hangman
                 LetterDeterminator(GuessALetter(), word);
             }
             CompareWords();
+            FinalMenu();
         }
         public void WelcomeDescriptionPrompt()
         {
@@ -65,26 +66,31 @@ namespace Hangman
         {
             Console.WriteLine(playerTwo.name + " Don't look! " + playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
             word = Console.ReadLine();
-            
+            wordArray = new string[word.Count()];
             return word;
         }
         public void CreateWordArray(string word)
         {
-            wordArray = new string[word.Count()];
             for (int i = 0; i < wordArray.Count(); i++)
             {
                 if (wordArray[i] == null)
                 {
-                    wordArray[i] = "_";
+                    wordArray[i] = "_ ";
                 }
             }
         }
         public string GuessALetter()
         {
+
             Console.WriteLine(playerTwo.name + " guess a letter");
             string letter = Console.ReadLine().ToLower();
             if (letter.Count() != 1)
             {
+                GuessALetter();
+            }
+            if (!alphabet.Contains(letter))
+            {
+                Console.WriteLine("You already guessed this letter");
                 GuessALetter();
             }
             return letter;
@@ -94,13 +100,12 @@ namespace Hangman
             if (word.Contains(letter))
             {
                 Console.WriteLine("Heyooo! " + letter + " is in " + playerOne.name + "'s word!");
-                
-                foreach (string item in alphabet)
-                {
 
-                    if (item == letter)
+                for (int i = 0; i < alphabet.Count(); i++)
+                {
+                    if (alphabet[i] == letter)
                     {
-                        letter = null;
+                        alphabet[i] = null;
                     }
                 }
                 
