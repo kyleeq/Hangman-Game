@@ -62,7 +62,7 @@ namespace Hangman
         }
         public string WordPrompt()
         {
-            Console.WriteLine(playerTwo + "Don't look! " + playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
+            Console.WriteLine(playerTwo.name + " Don't look! " + playerOne.name + " enter a word you would like " + playerTwo.name + " to guess");
             word = Console.ReadLine();
             
             return word;
@@ -80,7 +80,7 @@ namespace Hangman
         }
         public string GuessALetter()
         {
-            Console.WriteLine(playerTwo + " guess a letter");
+            Console.WriteLine(playerTwo.name + " guess a letter");
             string letter = Console.ReadLine().ToLower();
             if (letter.Count() != 1)
             {
@@ -100,12 +100,12 @@ namespace Hangman
                         letter = null;
                     }
                 }
-                Console.WriteLine("Heyooo! " + letter + " is in " + playerOne + "'s word!");
+                Console.WriteLine("Heyooo! " + letter + " is in " + playerOne.name + "'s word!");
             }
             else
             {
                 BodyPartNum++;
-                Console.WriteLine("Big oof. " + playerOne + "'s word does not contain that letter. Hangman now has a " + BodyParts[BodyPartNum]);
+                Console.WriteLine("Big oof. " + playerOne.name + "'s word does not contain that letter. Hangman now has a " + BodyParts[BodyPartNum]);
             }
         }
         public void CompareWords()
